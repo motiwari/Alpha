@@ -1,2 +1,7 @@
 # Alpha
- Alpah pattern for XYZW based Science.
+ Alpha pattern for XYZW based Science.
+
+Imports:
+- pytorch
+- torchvision
+- pandas
