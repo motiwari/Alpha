@@ -5,4 +5,9 @@ Imports:
 - pytorch
 - torchvision
 - pandas
-
+  
+Dask Imports:
+- dask
+- dask-cloudprovider
+- dask-kubernetes
+- dask-jobqueue
