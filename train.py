@@ -27,9 +27,9 @@ lr_list           = [
                      0.01,
                      ]
 
-for dataset_idx in range(len(dataset_list)):
-    for net_idx in range(len(net_list)):
-        for lr_idx in range(len(lr_list)):
+for dataset_idx in range(6):
+    for net_idx in range(2):
+        for lr_idx in range(4):
             
             im_size, num_classes, input_ch, size_dataset \
             = get_dataset_properties(dataset_list[dataset_idx])
