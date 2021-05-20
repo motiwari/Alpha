@@ -14,31 +14,23 @@ def get_loader(self, phase, drop_last):
     
     constructor = TransformConstructor()
     transform = constructor.construct(phase, self.dataset, self)
-    
-    try:
+
+    if self.dataset in ['MNIST', 'FashionMNIST', 'ImageNet', 'CIFAR10', 'CIFAR100']:
         dataset = func(root=self.dataset_path,
                        train=(phase=='train'),
                        transform=transform,
                        download=True)
-    except:
-        pass
-    
-    try:
+    elif self.dataset=='FakeData':
         dataset = func(root=self.dataset_path,
                        train=(phase=='train'),
                        transform=transform,
                        download=True,
                        classes=self.num_classes)
-    except:
-        pass
-    
-    try:
+    else:
         dataset = func(root=self.dataset_path,
                        split=phase,
                        transform=transform,
                        download=True)
-    except:
-        pass
     
     batch_size = getattr(self, phase + '_batch_size')
         

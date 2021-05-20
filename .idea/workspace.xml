@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43ab8dff-63a0-4432-b454-f058ebc58c44" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Alpha.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Alpha.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loader/constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/loader/constructor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +24,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -89,11 +95,20 @@
       <updated>1620681100879</updated>
       <workItem from="1620681125372" duration="895000" />
       <workItem from="1620738025477" duration="4083000" />
-      <workItem from="1620929877499" duration="448000" />
+      <workItem from="1620929877499" duration="906000" />
+      <workItem from="1621194421650" duration="5170000" />
+      <workItem from="1621278942570" duration="1222000" />
+      <workItem from="1621280526304" duration="386000" />
+      <workItem from="1621281138031" duration="5035000" />
+      <workItem from="1621447583595" duration="7006000" />
+      <workItem from="1621521934620" duration="478000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Alpha$Alpha.coverage" NAME="Alpha Coverage Results" MODIFIED="1621475969751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

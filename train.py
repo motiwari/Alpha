@@ -30,10 +30,10 @@ lr_list           = [
 for dataset_idx in range(6):
     for net_idx in range(2):
         for lr_idx in range(4):
-            
+
             im_size, num_classes, input_ch, size_dataset \
             = get_dataset_properties(dataset_list[dataset_idx])
-            
+
             loader_opts  = {
                             'dataset'           : dataset_list[dataset_idx],
                             'loader_type'       : 'Natural',
@@ -46,18 +46,19 @@ for dataset_idx in range(6):
                             'threads'           : 4,
                             'epc_seed'          : 0,
                             }
-            
+
             optim_kwargs = {
                             'weight_decay'      : 5e-4,
                             'momentum'          : 0.9,
                             }
-            
+
             train_opts   = {
                             'crit'              : 'CrossEntropyLoss',
                             'net'               : net_list[net_idx],
                             'optim'             : 'SGD',
                             'optim_kwargs'      : optim_kwargs,
-                            'epochs'            : 20,
+                            'epochs'            : 2,
+                            # 'epochs'            : 20,
                             'lr'                : lr_list[lr_idx],
                             'milestones'        : [],
                             'gamma'             : 0.1,
@@ -71,20 +72,19 @@ for dataset_idx in range(6):
                             'training_results_path': './results',
                             'train_dump_file'   : 'training_results.json',
                             }
-            
+
             opts = dict(loader_opts, **train_opts)
             opts = dict(opts, **results_opts)
-            
+
             def compute_accuracy_aux(variables,k):
                 return compute_accuracy(variables['est'].data, variables['target'].data, topk=(k,))[0][0]
-            
+
             stats_meter    = {'top1' : lambda variables: float(compute_accuracy_aux(variables, 1).item()),
                               'loss' : lambda variables: float(variables['loss'].item()),
                               }
-            
-            stats_no_meter = {}
-            
-            exp = Experiment(opts)
-            
-            exp.run(stats_meter, stats_no_meter)
 
+            stats_no_meter = {}
+
+            exp = Experiment(opts)
+
+            exp.run(stats_meter, stats_no_meter)

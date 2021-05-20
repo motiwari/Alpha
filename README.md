@@ -5,3 +5,4 @@ Imports:
 - pytorch
 - torchvision
 - pandas
+- scipy
