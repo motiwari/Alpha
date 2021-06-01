@@ -1,0 +1,49 @@
+[cloud/google]
+provider=google
+gce_client_id=308342824695-gpc4m1n2rr1g9nvaj4chspdno8kln1is.apps.googleusercontent.com
+gce_client_secret=I4bZr6Gsm9F-dIX-9n4V-Wcs
+gce_project_id=superb-garden-303018
+noauth_local_webserver=True
+# zone=us-east1-d
+# zone=us-central1-f
+zone=us-central1-c
+
+[login/google]
+image_user=awd
+image_user_sudo=root
+image_sudo=True
+user_key_name=elasticluster
+user_key_private=~/.ssh/google_compute_engine
+user_key_public=~/.ssh/google_compute_engine.pub
+
+[setup/ansible]
+ansible_forks=20
+ansible_timeout=200
+
+# use Anaconda Python3 flavor
+global_var_anaconda_python_version=3
+
+
+[setup/ansible-slurm]
+provider=ansible
+frontend_groups=slurm_master
+# frontend_groups=slurm_master,cuda
+# frontend_groups=slurm_master,r
+# frontend_groups=slurm_master,r,anaconda
+# frontend_r_cluster_support=yes
+# frontend_r_libraries=[devtools,doSnow]
+# frontend_var_anaconda_in_path=True
+
+# compute_groups=slurm_worker
+compute_groups=slurm_worker,cuda
+# compute_groups=slurm_worker,r
+# compute_groups=slurm_worker,r,anaconda
+# compute_r_cluster_support=yes
+# compute_r_libraries=[devtools,doSnow]
+# compute_var_anaconda_in_path=True
+
+# allow restart of compute nodes
+compute_var_allow_reboot=yes
+global_var_slurm_taskplugin=task/cgroup
+global_var_slurm_proctracktype=proctrack/cgroup
+global_var_slurm_jobacctgathertype=jobacct_gather/cgroup

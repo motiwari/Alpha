@@ -1,0 +1,55 @@
+[gce]
+host	gce-frontend001.us-central1-c.superb-garden-303018
+user	awd
+Bqs	SLURM
+Repo	/home/awd/CJRepo_Remote
+MAT     	matlab/R2019a
+MATlib		~/cvx:~/mosek/9.2/toolbox/r2015a:~/yalmip:/share/software/modules/math/gurobi
+Python		python/3.8.8
+Pythonlib	IPython:pandas:libgcc:scipy:matplotlib:requests:pytorch:torchvision: -c conda-forge
+R	        R
+Rlib	    ggplot2  
+Alloc		--time UNLIMITED
+[gce]
+
+[gce-small]
+host	gce-small-frontend001.us-central1-a.superb-garden-303018
+user	awd
+Bqs	SLURM
+Repo	/home/awd/CJRepo_Remote
+MAT     	matlab/R2019a
+MATlib		~/cvx:~/mosek/9.2/toolbox/r2015a:~/yalmip:/share/software/modules/math/gurobi
+Python		python/3.8.8
+Pythonlib	IPython:pandas:numpy:libgcc:scipy:matplotlib:cvxpy: -c conda-forge
+R	        R
+Rlib	    ggplot2  
+Alloc		--time UNLIMITED
+[gce-small]
+
+[gce-high-mem]
+host	gce-high-mem-frontend001.us-central1-a.superb-garden-303018
+user	awd
+Bqs	SLURM
+Repo	/home/awd/CJRepo_Remote
+MAT     	matlab/R2019a
+MATlib		~/cvx:~/mosek/9.2/toolbox/r2015a:~/yalmip:/share/software/modules/math/gurobi
+Python		python/3.8.8
+Pythonlib	IPython:pandas:numpy:libgcc:scipy:matplotlib:cvxpy: -c conda-forge
+R	        R
+Rlib	    ggplot2  
+Alloc		--time UNLIMITED
+[gce-high-mem]
+
+[gce-gpu]
+host	gce-gpu-frontend001.us-central1-c.superb-garden-303018
+user	awd
+Bqs	SLURM
+Repo	/home/awd/CJRepo_Remote
+MAT     	matlab/R2019a
+MATlib		~/cvx:~/mosek/9.2/toolbox/r2015a:~/yalmip:/share/software/modules/math/gurobi
+Python		python/3.8.8
+Pythonlib	numpy:pandas:scipy:pytorch:torchvision:matplotlib
+R	        R
+Rlib	    ggplot2  
+Alloc		--time UNLIMITED
+[gce-gpu]

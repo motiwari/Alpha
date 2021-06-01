@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43ab8dff-63a0-4432-b454-f058ebc58c44" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Alpha.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Alpha.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loader/constructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/loader/constructor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +98,12 @@
       <workItem from="1621280526304" duration="386000" />
       <workItem from="1621281138031" duration="5035000" />
       <workItem from="1621447583595" duration="7006000" />
-      <workItem from="1621521934620" duration="478000" />
+      <workItem from="1621521934620" duration="1255000" />
+      <workItem from="1621953957829" duration="532000" />
+      <workItem from="1621974497662" duration="351000" />
+      <workItem from="1622032085367" duration="1528000" />
+      <workItem from="1622386370546" duration="1997000" />
+      <workItem from="1622402499115" duration="488000" />
     </task>
     <servers />
   </component>
