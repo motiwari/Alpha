@@ -1,6 +1,7 @@
 __metaclass__ = type
 
 from torchvision import transforms
+from transform_constants import *
 
 class TransformConstructor:
     def construct(self, phase, dataset_name, obj):
@@ -38,20 +39,20 @@ class TransformConstructor:
     class MNIST(Dataset):
         def __init__(self, obj):
             super(TransformConstructor.MNIST, self).__init__(obj)
-            self.mean = (0.1307,)
-            self.std = (0.3081,)
+            self.mean = (MNIST_MEAN,)
+            self.std = (MNIST_STD,)
 
     class FashionMNIST(Dataset):
         def __init__(self, obj):
             super(TransformConstructor.FashionMNIST, self).__init__(obj)
-            self.mean = (0.2860,)
-            self.std = (0.3530,)
+            self.mean = (FASHION_MNIST_MEAN,)
+            self.std = (FASHION_MNIST_STD,)
 
     class CIFAR10(Dataset):
         def __init__(self, obj):
             super(TransformConstructor.CIFAR10, self).__init__(obj)
-            self.mean = [x / 255 for x in [125.3, 123.0, 113.9]]
-            self.std = [x / 255 for x in [63.0, 62.1, 66.7]]
+            self.mean = [x / 255 for x in CIFAR10_MEAN]
+            self.std = [x / 255 for x in CIFAR10_STD]
 
         def train_transform(self):
             return transforms.Compose([
@@ -70,8 +71,8 @@ class TransformConstructor:
     class CIFAR100(Dataset):
         def __init__(self, obj):
             super(TransformConstructor.CIFAR100, self).__init__(obj)
-            self.mean = [x / 255 for x in [129.3, 124.1, 112.4]]
-            self.std = [x / 255 for x in [68.2, 65.4, 70.4]]
+            self.mean = [x / 255 for x in CIFAR100_MEAN]
+            self.std = [x / 255 for x in CIFAR100_STD]
 
         def train_transform(self):
 
@@ -91,8 +92,8 @@ class TransformConstructor:
     class STL10(Dataset):
         def __init__(self, obj):
             super(TransformConstructor.STL10, self).__init__(obj)
-            self.mean = (0.4467, 0.4398, 0.4066)
-            self.std = (0.2603, 0.2566, 0.2713)
+            self.mean = STL10_MEAN
+            self.std = STL10_STD
 
         def train_transform(self):
             return transforms.Compose([
@@ -112,8 +113,8 @@ class TransformConstructor:
     class SVHN(Dataset):
         def __init__(self, obj):
             super(TransformConstructor.SVHN, self).__init__(obj)
-            self.mean = (0.4377, 0.4438, 0.4728)
-            self.std = (0.1980, 0.2010, 0.1970)
+            self.mean = SVHN_MEAN
+            self.std = SVHN_STD
 
         def train_transform(self):
             return transforms.Compose([
