@@ -1,6 +1,7 @@
 #CJ -s '../../data' '/scratch/users/papyan/datasets'
 
 import torch
+import itertools
 
 from exper.experiment import Experiment
 from utils.accuracy import compute_accuracy
@@ -26,13 +27,13 @@ lr_list           = [
                      0.05,
                      0.01,
                      ]
-
-for dataset_idx in range(6):
-    for net_idx in range(2):
-        for lr_idx in range(4):
-
-            im_size, num_classes, input_ch, size_dataset \
-            = get_dataset_properties(dataset_list[dataset_idx])
+                     
+X = len(dataset_list)
+Y = len(net_list)
+Z = len(lr_list)
+for dataset_idx, net_idx, lr_idx in itertools.product(range(X), range(Y), range(Z)):
+            im_size, num_classes, input_ch, size_dataset = \
+                get_dataset_properties(dataset_list[dataset_idx])
 
             loader_opts  = {
                             'dataset'           : dataset_list[dataset_idx],
@@ -68,7 +69,7 @@ for dataset_idx in range(6):
                             'seed'              : 0,
                             }
 
-            results_opts = {
+            results_opts  = {
                             'training_results_path': './results',
                             'train_dump_file'   : 'training_results.json',
                             }
@@ -76,12 +77,13 @@ for dataset_idx in range(6):
             opts = dict(loader_opts, **train_opts)
             opts = dict(opts, **results_opts)
 
-            def compute_accuracy_aux(variables,k):
+            def compute_accuracy_aux(variables, k):
                 return compute_accuracy(variables['est'].data, variables['target'].data, topk=(k,))[0][0]
 
-            stats_meter    = {'top1' : lambda variables: float(compute_accuracy_aux(variables, 1).item()),
-                              'loss' : lambda variables: float(variables['loss'].item()),
-                              }
+            stats_meter    = {
+                                'top1' : lambda variables: float(compute_accuracy_aux(variables, 1).item()),
+                                'loss' : lambda variables: float(variables['loss'].item()),
+                            }
 
             stats_no_meter = {}
 
