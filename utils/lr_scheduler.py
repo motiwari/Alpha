@@ -7,6 +7,7 @@ class _LRScheduler(object):
         if not isinstance(optimizer, Optimizer):
             raise TypeError('{} is not an Optimizer'.format(
                 type(optimizer).__name__))
+
         self.optimizer = optimizer
         if last_epoch == -1:
             for group in optimizer.param_groups:
@@ -26,6 +27,7 @@ class _LRScheduler(object):
     def step(self, epoch=None):
         if epoch is None:
             epoch = self.last_epoch + 1
+
         self.last_epoch = epoch
         for param_group, lr in zip(self.optimizer.param_groups, self.get_lr()):
             param_group['lr'] = lr
@@ -61,6 +63,7 @@ class LambdaLR(_LRScheduler):
                 raise ValueError("Expected {} lr_lambdas, but got {}".format(
                     len(optimizer.param_groups), len(lr_lambda)))
             self.lr_lambdas = list(lr_lambda)
+
         self.last_epoch = last_epoch
         super(LambdaLR, self).__init__(optimizer, last_epoch)
 
